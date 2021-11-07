@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="htts://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Editar Producto</title>
+</head>
+<body>
+	<header th:replace="layout/plantilla :: header"></header>
+	<div>
+		<h1>Editar Producto</h1>
+		<br>
+		<form action="#" th:action="@{/save}" th:object="${producto}" method="post">
+			<table border="1" cellpadding="10">
+				<tr>
+					<td>Codigo de Producto</td>
+					<td><input type="text" th:field="*{codigo_producto}" readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td>Nombre de Producto</td>
+					<td><input type="text" th:field="*{nombre_producto}" /></td>
+					<span th:if="${#fields.hasErrors('nombre_producto')}" th:errors="*{nombre_producto}">Error de Nombre</span>
+				</tr>
+				<tr>
+					<td>Nit Proveedor</td>
+					<td><input type="text" th:field="*{nitproveedor}" /></td>
+					<span th:if="${#fields.hasErrors('nitproveedor')}" th:errors="*{nitproveedor}">Error de Nit Proveedor</span>
+				</tr>
+				<tr>
+					<td>Precio de Compra</td>
+					<td><input type="text" th:field="*{precio_compra}" /></td>
+				</tr>
+				<tr>
+					<td>Iva de Compra</td>
+					<td><input type="text" th:field="*{ivacompra}" /></td>
+					<span th:if="${#fields.hasErrors('ivacompra')}" th:errors="*{ivacompra}">Error de Iva</span>
+				</tr>
+				<tr>
+					<td>Precio de Venta</td>
+					<td><input type="text" th:field="*{precio_venta}" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit">Grabar</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>
