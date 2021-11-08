@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Generica</title>
+    
+	<!-- Enlace cdn de bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<!-- Enlace al diseño del login -->
+	<link href="css/login.css">
+</head>
+<body>
+	<section class="vh-100">
+		<div class="container-fluid h-custom">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<!-- Fondo con el logo de la app -->
+				<div class="col-md-9s col-lg-6 col-lg-5">
+					<img src="images/LaGenerica.png" class="imgen" alt="Logo La Genérica">
+				</div>
+			<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+				<!-- Logo Universidad El Bosque -->
+				<div class="container-fluid h-custom">
+					<div class="row col-sm-12">
+						<img src="images/LogoUBosque.png" alt="Logo universidad El Bosque">
+					</div>
+				</div>
+
+				<form>	
+				<div class="divider d-flex align-items-center my-4">
+					<p class="text-center fw-bold mx-3 mb-0">Inicia sesión: </p>
+				</div>
+		
+				<!-- Ingresar usuario -->
+				<div class="form-outline mb-4">
+					<input type="text" id="input_email" class="form-control form-control-lg"
+					placeholder="Ingresa tu usuario" />
+					<label class="form-label" for="input_email">Usuario</label>
+				</div>
+		
+				<!-- Ingresar contraseña -->
+				<div class="form-outline mb-3">
+					<input type="password" id="input_password" class="form-control form-control-lg"
+					placeholder="Ingresa tu contraseña" />
+					<label class="form-label" for="input_password">Contraseña</label>
+				</div>
+		
+				<div class="d-flex justify-content-between align-items-center">
+					<!-- Checkbox recordar datos -->
+					<div class="form-check mb-0">
+					<input class="form-check-input me-2" type="checkbox" value="" id="recordar" />
+					<label class="form-check-label" for="recordar">
+						Recordar datos de inicio
+					</label>
+					</div>
+					<a href="#!" class="text-body">Recuperar contraseña</a>
+				</div>
+		
+				<!-- Botones de inicio de sesión y registro -->
+				<div class="text-center text-lg-start mt-4 pt-2">
+					<button type="button" class="btn btn-primary btn-lg"
+					style="padding-left: 2.5rem; padding-right: 2.5rem;">Entrar</button>
+					<p class="small fw-bold mt-2 pt-1 mb-0">No estás registrado? <a href="#!"
+						class="link-danger">Registrate</a></p>
+				</div>
+		
+				</form>
+			</div>
+			</div>
+	  </div>
+
+	 <br> 
+
+	  <footer>
+		<div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+			<!-- Copyright -->
+			<div class="text-white mb-3 mb-md-0">
+			  Copyright © 2020. All rights reserved.
+			</div>
+		
+			<!-- Enlaces a redes sociales de la tienda -->
+			<div>
+			  <a href="#!" class="text-white me-4">
+				<i class="fab fa-facebook-f"></i>
+			  </a>
+			  <a href="#!" class="text-white me-4">
+				<i class="fab fa-twitter"></i>
+			  </a>
+			  <a href="#!" class="text-white me-4">
+				<i class="fab fa-google"></i>
+			  </a>
+			  <a href="#!" class="text-white">
+				<i class="fab fa-linkedin-in"></i>
+			  </a>
+			</div>
+		  </div>
+	  </footer>
+	</section>
+</body>
+</html>
