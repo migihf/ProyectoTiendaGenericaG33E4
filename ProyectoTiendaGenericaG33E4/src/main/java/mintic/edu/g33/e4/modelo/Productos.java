@@ -7,8 +7,8 @@ import javax.validation.constraints.*;
 /*
 	DTO de Producto
 
-	Linea 21: Variables
-	Linea 41: Getters, Setters
+	Linea 18: Variables
+	Linea 44: Getters, Setters
 
 */
 
