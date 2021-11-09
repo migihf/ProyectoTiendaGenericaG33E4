@@ -22,7 +22,7 @@ public class AppControlador {
 	//Listado de Productos
 	@RequestMapping("/")
 	public String verIndex(Model model) {
-		List<Productos> listaProductos = servicio.listar();
+		List<Productos> listaProductos = servicio.consultarListaProducto();
 		model.addAttribute("listaProductos", listaProductos);
 		return "index";
 	}
@@ -43,7 +43,7 @@ public class AppControlador {
 		if (errores.hasErrors()) {
 			return "nuevo_producto";
 		} else {
-			servicio.save(producto);
+			servicio.editarProducto(producto);
 			return "redirect:/";
 		}
 		
@@ -52,7 +52,7 @@ public class AppControlador {
 	//Consultar Producto por codigo
 	@GetMapping("/listar/{codigo_producto}")
 	public String listarId(@PathVariable int codigo, Model model) {
-		model.addAttribute("producto", servicio.listarId(codigo));
+		model.addAttribute("producto", servicio.consultarProducto(codigo));
 		
 		return "editar_producto";
 	}
@@ -60,7 +60,7 @@ public class AppControlador {
 	//Eliminar Producto por codigo
 	@RequestMapping("/delete/{codigo_producto}")
 	public String deleteProduct(@PathVariable(name="codigo_producto") int codigo){
-		servicio.delete(codigo);
+		servicio.eliminarProducto(codigo);
 		return "redirect:/";
 	}
 	
