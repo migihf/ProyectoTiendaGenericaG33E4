@@ -4,43 +4,51 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 
+/*
+	DTO de Producto
 
-//anotaciones
+	Linea 21: Variables
+	Linea 41: Getters, Setters
+
+*/
+
 @Entity
 public class Productos {
-	//atributos tabla
+
 	@Id
-	@Size(min=2,max=20)
+	@NotNull
 	private int codigo_producto;
 	
 	@NotEmpty
-	@Size(min=5,max=50)
+	@Size(min = 1, max = 50)
 	private String nombre_producto;
 	
-	@Min(value=8)
-	@Max(value=20)
+	@Min(value = 1)
 	private int nitproveedor;
 	
+	@Min(value = 1)
 	private double precio_compra;
 	
-	@Min(value=0)
-	@Max(value=19)
+	@Min(value = 0)
+	@Max(value = 19)
 	private double ivacompra;
 	
+	@Min(value = 1)
 	private double precio_venta;
 
-	public Productos(@Size(min = 2, max = 20) int codigo_producto,
-			@NotEmpty @Size(min = 5, max = 50) String nombre_producto, @Min(8) int nitproveedor, double precio_compra,
-			@Min(19) @Max(35) double ivacompra, double precio_venta) {
-		this.codigo_producto = codigo_producto;
+	public Productos() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Productos(@Size(min = 1, max = 20) int codigo_producto, @NotEmpty @Size(min = 1, max = 50) String nombre_producto, @Min(8) int nitproveedor, double precio_compra, @Min(19) @Max(35) double ivacompra, double precio_venta) {
+		super();
+		this.codigo_producto= codigo_producto;
 		this.nombre_producto = nombre_producto;
 		this.nitproveedor = nitproveedor;
 		this.precio_compra = precio_compra;
 		this.ivacompra = ivacompra;
 		this.precio_venta = precio_venta;
-	}
-
-	public Productos() {
 	}
 
 	public int getCodigo_producto() {
@@ -93,10 +101,6 @@ public class Productos {
 
 	@Override
 	public String toString() {
-		return "Productos [codigo_producto=" + codigo_producto + ", nombre_producto=" + nombre_producto
-				+ ", nitproveedor=" + nitproveedor + ", precio_compra=" + precio_compra + ", ivacompra=" + ivacompra
-				+ ", precio_venta=" + precio_venta + "]";
+		return "Productos [codigo_producto=" + codigo_producto + ", nombre_producto=" + nombre_producto + ", nitproveedor=" + nitproveedor + ", precio_compra=" + precio_compra + ", ivacompra=" + ivacompra + ", precio_venta=" + precio_venta + "]";
 	}
-	
-		
 }
