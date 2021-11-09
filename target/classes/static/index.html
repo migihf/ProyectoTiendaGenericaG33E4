@@ -28,21 +28,20 @@
 					</div>
 				</div>
 
-				<form>	
+				<form action="#" method="post">	
 				<div class="divider d-flex align-items-center my-4">
 					<p class="text-center fw-bold mx-3 mb-0">Inicia sesión: </p>
 				</div>
 		
 				<!-- Ingresar usuario -->
 				<div class="form-outline mb-4">
-					<input type="text" id="input_email" class="form-control form-control-lg"
-					placeholder="Ingresa tu usuario" />
-					<label class="form-label" for="input_email">Usuario</label>
+					<input type="text" id="Usuario" name="nombreUsuario" class="form-control form-control-lg" placeholder="Ingresa tu usuario" />
+					<label class="form-label" for="Usuario">Usuario</label>
 				</div>
 		
 				<!-- Ingresar contraseña -->
 				<div class="form-outline mb-3">
-					<input type="password" id="input_password" class="form-control form-control-lg"
+					<input type="password" id="input_password" name="password" class="form-control form-control-lg"
 					placeholder="Ingresa tu contraseña" />
 					<label class="form-label" for="input_password">Contraseña</label>
 				</div>
@@ -60,8 +59,7 @@
 		
 				<!-- Botones de inicio de sesión y registro -->
 				<div class="text-center text-lg-start mt-4 pt-2">
-					<button type="button" class="btn btn-primary btn-lg"
-					style="padding-left: 2.5rem; padding-right: 2.5rem;">Entrar</button>
+					<button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Entrar</button>
 					<p class="small fw-bold mt-2 pt-1 mb-0">No estás registrado? <a href="#!"
 						class="link-danger">Registrate</a></p>
 				</div>

@@ -7,8 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mintic.edu.g33.e4.modelo.ProductoRepositorio;
-import mintic.edu.g33.e4.modelo.Productos;
+import mintic.edu.g33.e4.repositorio.ProductoRepositorio;
+import mintic.edu.g33.e4.modelo.Producto;
 
 @Service
 @Transactional
@@ -18,17 +18,17 @@ public class ProductoServicio {
 	private ProductoRepositorio repo;
 	
 	//Listado de Productos
-	public List<Productos> listar(){
+	public List<Producto> listar(){
 		return repo.findAll();
 	}
 	
 	//Consultar Producto por codigo
-	public Productos listarId(int id) {
+	public Producto listarId(int id) {
 		return repo.findById(id).get();
 	}
 	
 	//Guardar datos de Producto
-	public void save(Productos p) {
+	public void save(Producto p) {
 		repo.save(p);
 	}
 	

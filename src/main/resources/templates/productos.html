@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="htts://www.thymeleaf.org">
+<head th:replace="layout/plantilla :: head">
+<meta charset="ISO-8859-1">
+<title>Gestion de productos</title>
+</head>
+<body>
+	<header th:replace="layout/plantilla :: header"></header>
+	<div class="container-fluid" align="center">
+		<h1>Listado de productos</h1>
+		<a href="/new">crear un nuevo Producto</a>
+		<br>
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Código de Producto</td>
+					<td>Nombre de Producto</td>
+					<td>Nit Proveedor</td>
+					<td>Precio Compra</td>
+					<td>Iva de Compra</td>
+					<td>Precio Venta</td>
+					<td>Acciones</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="producto : ${listaProductos}">
+					<td th:text="${producto.codigo_producto}"></td>
+					<td th:text="${producto.nombre_producto}"></td>
+					<td th:text="${producto.nitproveedor}"></td>
+					<td th:text="${producto.precio_compra}"></td>
+					<td th:text="${producto.ivacompra}"></td>
+					<td th:text="${producto.precio_venta}"></td>
+					<td>
+						<a th:href="@{'/listar/' + ${producto.codigo_producto}}">Editar</a>
+						<a th:href="@{'/delete/' + ${producto.codigo_producto}}">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>

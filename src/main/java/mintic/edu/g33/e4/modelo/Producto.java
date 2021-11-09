@@ -7,7 +7,7 @@ import javax.validation.constraints.*;
 
 //anotaciones
 @Entity
-public class Productos {
+public class Producto {
 	//atributos tabla
 	@Id
 	@Size(min=2,max=20)
@@ -29,7 +29,7 @@ public class Productos {
 	
 	private double precio_venta;
 
-	public Productos(@Size(min = 2, max = 20) int codigo_producto,
+	public Producto(@Size(min = 2, max = 20) int codigo_producto,
 			@NotEmpty @Size(min = 5, max = 50) String nombre_producto, @Min(8) int nitproveedor, double precio_compra,
 			@Min(19) @Max(35) double ivacompra, double precio_venta) {
 		this.codigo_producto = codigo_producto;
@@ -40,7 +40,7 @@ public class Productos {
 		this.precio_venta = precio_venta;
 	}
 
-	public Productos() {
+	public Producto() {
 	}
 
 	public int getCodigo_producto() {
